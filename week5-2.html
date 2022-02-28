@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, intial-scale=1">
+	<title>Week 5-2</title>
+
+	<!-- cascading style is multiple elements style will be merged on the last one -->
+	<!-- all content inside body can be modified using body{}, this is called selector -->
+
+	<style type="text/css">
+	
+
+	/*h1{font-family: Arial}*/
+	/*body{font-family: arial;}
+	p{color: skyblue;font-size: 2em;}
+	u{background-color: darkmagenta;}
+	p{font-style: italic;color: magenta}
+	p{line-height: 2em;}*/
+
+
+	/*priority level (selector)
+	1. inline
+	2. id
+	3. class
+	4. element
+
+	#red{color: red}
+	.blue{color: blue}
+	h1{color: magenta} */
+
+
+	/*descendent selector
+	div p{
+		color: red
+	}*/
+
+
+	/*child selector
+	div>p{color: red}
+
+	for multiple selection, use
+	div>span>p{attributes}*/	
+
+
+	/*.red{color: red;}*/
+	/*div p{color: red}*/
+	/*div>p{color: red}*/
+	div>span>p{color: red}
+
+	/*for multiple selectors, use ,
+	example: div>span>p,h2{attributes}*/
+
+	/*general siblings selector: element~element*/
+
+
+	</style>
+
+</head>
+<body>
+
+
+	</style>
+
+</head>
+
+<body>
+	<!-- Activity 1 -->
+	<!-- <h1>This is H1</h1>
+	<p>I am a paragrah</p>
+	<p>another paragrah</p>
+	<u>Im underline</u>
+	<p>yet another P</p> -->
+
+
+	<!-- Activity 2 -->
+	<!-- <!-- <div>
+		<h2>I am H2</h2>
+		<h3>Im a h3</h3>	
+		<h3>yet another h3</h3>
+<!-- 		<p class="red">Im a P in a div</p>
+		<p class="red">Im also P in a div</p> -->
+		<!-- <p>Im a P in a div</p>
+		<p>Im also P in a div</p>
+		<span> -->
+	<!-- 		<p class="red">I am a child of span</p> -->
+
+			<!-- <p>I am a child of span</p> --> <!-- make this red -->
+		<!-- </span>
+	</div>
+	<p>im outside p</p>
+	<span>im span outside div <p>S1</p></span> -->
+
+
+	<!-- Activity 3 -->
+		<!-- <style type="text/css">
+		
+		/*div+p{color: red}*/
+	/*	body>p{color: red;}*/
+		div~p{color: red;}
+		</style>
+
+	</head>
+	<body> -->
+	<div>
+	 	<p>Im the first child of 1st div</p>
+	 	<p>Im the second child of 1st div</p>
+	 </div>
+	 <p>I am the next sibling just after 1st div</p>
+	 <p>I am the second sibling just after 1st div</p>
+	 <div>
+	 	<p>I am the first child of the 2nd div</p>
+	 </div>
+	 <p>Iam the next sibling after the 2nd div</p>
+	 <p>I am the second sibling just after 2nd div</p>
+	 <p>I am the thirsd sibling just after 2nd div</p>
+
+	 <!-- Activity 1 -->
+	 <!-- <style type="text/css">
+	
+	/*h1{font-family: Arial}*/
+	body{font-family: arial;}
+	p{color: skyblue;font-size: 2em;}/* skyblue, 2em*/
+	u{background-color: darkmagenta;}
+	p{font-style: italic;color: red}  /*red, 2em, italic*/
+	p{line-height: 2em;}/*red, 2em, italic,2em*/
+
+	</style>
+
+	</head>
+	<body>
+	<h1>This is H1</h1>
+	<p>I am a paragrah</p>
+	<p>another paragrah</p>
+	<u>Im underline</u>
+	<p>yet another P</p> -->
+
+	<!-- Activity 2 -->
+	<style type="text/css">
+	
+
+	/*.red{color: red;}*/
+	/*div p{color: red}*/
+    /*div>p{color: red}*/
+	div>span>p{color: red}
+	</style>
+
+	</head>
+<body>
+	<div>
+		<h2>I am H2</h2>
+		<h3>Im a h3</h3>	
+		<h3>yet another h3</h3>
+<!-- 		<p class="red">Im a P in a div</p>
+		<p class="red">Im also P in a div</p> -->
+		<p>Im a P in a div</p>
+		<p>Im also P in a div</p>
+		<span>
+	<!-- 		<p class="red">I am a child of span</p> -->
+
+			<p>I am a child of span</p> <!-- make this red -->
+		</span>
+	</div>
+	<p>im outside p</p>
+	<span>im span outside div <p>S1</p></span>
+
+
+	<!-- Activity 3 -->
+	<style type="text/css">
+	
+	/*div+p{color: red}*/
+  	/*body>p{color: red;}*/
+	div~p{color: red;}
+	</style>
+
+	</head>
+	<body>
+	<div>
+	 	<p>Im the first child of 1st div</p>
+	 	<p>Im the second child of 1st div</p>
+	 	<p>something 3rd child</p>
+	 </div>
+	 <p>I am the next sibling just after 1st div</p>
+	 <p>I am the second sibling just after 1st div</p>
+	 <div>
+	 	<p>I am the first child of the 2nd div</p>
+	 </div>
+	 <p>Iam the next sibling after the 2nd div</p>
+	 <p>I am the second sibling just after 2nd div</p>
+	 <p>I am the thirsd sibling just after 2nd div</p>
+
+
+
+
+	
+
+<body>
+
+</body>
+</html>
