@@ -9,14 +9,26 @@
 			.fs{font-size: 2em}
 			.dc{color: darkcyan;}
 
+			/*Attribute Selector contains [] brackets*/
+
 			/*.cn{font-family: "courier new"}*/
 			input[type="text"], h3 {font-family: "Courier New"}
+			/*the method above applies the CSS properties to all text input type,
+			and also for h3 elements*/
+
 
 			/*.samewidth{width: 200px;}*/
 			input[class]{width: 200px}
+			/*the method above applies the css properties to all inputs that contains class*/
 
-			li.italic{font-style:italic }
+			/*li.italic{font-style:italic }*/
 			li:nth-child(even){font-style: italic;}
+			/*the method above applies the css properties for list orders, even or odd*/
+			
+			/*Pseudo class selector can also be used in this situation*/
+			/*li:nth-child(3n){font-style: italic;}*/
+
+
 			/*can also use nth-child(x(number)n)*/
 
 			input{display: block;}
@@ -24,15 +36,20 @@
 /*			.turq{border: 3px solid turquoise;}*/
 			img[src^="assets/images/my/"]{border: 3px solid turquoise;}
 
-			h3, .border{border: 1px solid;}
+			h3, .border, div{border: 1px solid;}
 
 			/*.navy{border-color: navy}*/
 			input[class~="border"]{border-color: navy}
 
 			#d1 {width: 150px; height: 100px}
-			#d1 {width: 150px; height: 100px}
-			#d1 {width: 150px; height: 100px}
-			div#d2{display: none}
+			#d2 {width: 150px; height: 100px}
+			#d3 {width: 150px; height: 100px}
+			/*div#d2{display: none}*/
+			/*div#d2 {visibility: hidden}*/
+			div#d1 {padding: 10px; box-sizing: border-box;}
+			/*border box follows it dimension*/
+			div#d2 {padding: 50px}
+			div#d3 {margin-left: 10px}
 
 
 		</style>
@@ -89,6 +106,7 @@
 
 </ol>
 
+<p>can you tell the difference?</p>
 <div id="d1">Im a border box</div>
 <div id="d2">I'm a content box</div>
 <div id="d3">Another div</div>
