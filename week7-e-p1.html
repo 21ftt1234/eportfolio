@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week 7e p1</title>
+
+	<style type="text/css">
+
+		#container {
+			margin: 0px auto;
+			width: 50%;
+			border-collapse: collapse;
+			}
+
+		h3 {
+			text-align: center
+		}
+
+		form>div {
+			border: solid 1px;
+			border-collapse: collapse;
+			padding: 10px;
+		}
+
+		form>div:nth-child(n+9) {
+			text-align: center;
+		}
+
+		form>div>div:nth-child(n+1):nth-child(odd):nth-child(-n+8) {
+			width: 64%;
+		}
+
+		form>div>div:nth-child(n+1):nth-child(even):nth-child(-n+8) {
+			width: 30%;
+		}
+
+		form>div>div:nth-child(n+1):nth-child(-n+8) {
+			display: inline-block;
+		}
+
+</div>
+	</style>
+
+</head>
+<body>
+
+	<div id="container">
+
+		<h3>Registration for Covid-19 Volunteer - ® C19-Team</h3>
+
+		<form method="" action="">
+
+		<!-- Row 1 -->
+
+		<div>
+			<div><label>Fullname</label></div>
+			<div><input type="text" name="txtFullName" maxlength="30" pattern="[A-z]{30}"></div>
+		</div>
+		
+		<!-- Row 2 -->
+		
+		<div>
+			<div><label>Email</label></div>
+			<div><input type="Email" name="txtEmail"></div>
+		</div>
+
+		<!-- Row 3 -->	
+		
+		<div>
+			<div><label>Date you can start</label></div>
+			<div><input type="date" name="dateStart"></div>
+		</div>
+
+		<!-- Row 4 -->
+		
+		<div>
+			<div><label>Morning shift preference</label></div>
+			<div><input type="time" name="timeAM"></div>
+		</div>
+
+		<!-- Row 5 -->
+		
+		<div>
+			<div><label>Evening shift perference</label></div>
+			<div><input type="time" name="timePM"></div>
+		</div>
+
+		<!-- Row 6 -->
+		
+		<div>
+			<div><label>How many hours you can work? In multiple of 3</label></div>
+			<div><input type="number" name="numHour" value="3" step="3" min="3" max="9"></div>
+		</div>
+
+		<!-- Row 7 -->
+		<div>
+			<div><label>Distance you willing to commute to volunteer center?</label></div>
+			<div>
+				<label>1</label>
+				<input type="range" name="rangeDistance" value="3" min="1" max="15">
+				<label>15</label>
+		</div>
+		</div>
+		
+		<!-- Row 8 -->
+
+		<div>
+			<div><label>You currency perference for payment?</label></div>
+
+			<div>
+				<input type="radio" name="radCurrency" id="pound">
+				<label>&pound;</label>
+
+				<input type="radio" name="radCurrency" id="yen">
+				<label>&yen;</label>
+
+				<input type="radio" name="radCurrency" id="euro">
+				<label>&euro;</label>
+			</div>
+		</div>
+
+		<!-- Row 9 --> 
+
+		<div>
+			<textarea name="txtA_Address" rows="6" cols="40" placeholder="Type your home address"></textarea>
+		</div>
+
+		<!-- Row 10 --> 
+
+		<div>
+			<del>You will be given daily meals</del>
+		</div>
+
+		<!-- Row 11 --> 
+		
+		<div>
+			<label for="checkTerms"><input type="checkbox" name="checkTerms" disabled="1" checked="1" id="checkTerms"> I agree to all terms and conditions</label>
+		</div>
+
+		<!-- Row 12 --> 
+
+		<div>
+			<label for="checkRobot">Prove you are not robot: 10 &#60; 20? 
+			<input type="checkbox" name="checkRobot" id="checkRobot"></label>
+		</div>
+
+		<!-- Row 13 --> 
+		
+		<div>
+			<input type="submit" name="btnSubmit" value="Volunteer now!">
+		</div>
+
+		<!-- Row 14 --> 
+
+		<div>	
+			<input type="reset" name="btnReset" value="Start Over">
+		</div>
+
+		<!-- Row 15 --> 
+
+		<div>
+			<label>For more informaton, visit MOH <a href="https://www.moh.gov.bn/Pages/Home.aspx" target="_blank">website</a></label>
+		</div>
+
+	</form>
+
+	</div>
+
+</body>
+</html>
