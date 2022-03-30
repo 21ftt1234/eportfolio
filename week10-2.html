@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week10-2</title>
+
+	<script type="text/javascript">
+
+	</script>
+
+</head>
+<body>
+	<script type="text/javascript">
+		var x = 10;
+		var y = 15;
+		var z = "10";
+
+		const discount = 0.1;
+		// console.log("x is " + x);
+		// console.log("x-y is " + (x-y));
+		// console.log("y+z is " + (y+z));
+
+		// y = y - z;
+		// console.log("y is " + y);
+		// console.log("discount is " + discount);
+
+		// discount = 0.5;
+		// console.log("discount is " + discount);
+
+		// var num = (x>y);
+		// var k = 15;
+
+		// num = (y!=k);
+		// num = (x==z);
+
+		// === : a very strict comparison, compare (1)value (2)data type
+
+		// console.log(num);
+
+		// if (x>y) {
+		// 	console.log("x is greater than y");
+		// }
+
+		// if (x<y) {
+		// 	console.log("x is less than y");
+		// }
+
+		// or use if else
+		// if (x>y) {
+		// 	console.log("x is greater than y");
+		// }
+
+		// else {
+		// 	console.log("x is less than y");
+		// }
+
+
+
+		// Exercise, grabs user name, gender(m = awang, f = Dayang) and year of birth,
+		// to display "Hi Dayang ... . This year you will be (age) years old"
+
+		var name = prompt("Enter name: ");
+		var gender = prompt("Enter gender: (M|m|F|f");
+		var yearOfBirth = Number(prompt("Enter year of birth: "));
+
+		var currentDate = new Date();
+		var currentYear = Number(currentDate.getFullYear());
+
+		var age = currentYear - yearOfBirth;
+
+		if ((gender == "F") || (gender == "f")) {
+			var firstName = "Dayang ";
+		}
+		
+		else if ((gender == "M") || (gender == "m")){
+			var firstName = "Awang ";
+		}
+
+		else {
+			alert("Invalid Gender");
+		}
+
+
+		alert("Hi " + firstName + name + ". This year you will be " + age + " years old.");
+
+
+
+
+
+	</script>
+</body>
+</html>
