@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sample</title>
+	<style type="text/css">
+	</style>
+
+	<script type="text/javascript">
+		
+		var math = prompt("Do you have credit Mathematics? Y|N");
+		var eng = prompt("Do you have credit English Language? Y|N");
+		var malay = prompt("Do you have credit Malay Language? Y|N");
+		var ic = prompt("Are you tellow IC holder? Y|N");
+		var checkSub = prompt("Do you have credits in 3 English medium subjects? Y|N");
+
+		var output;
+
+		// if (math == Y && eng == Y) {
+		// 	if (malay == Y && ic == Y) {
+		// 		if (checkSub == Y) {
+		// 			output = "scholarship";
+		// 		}
+		// 		else {
+		// 			output = "You are not eligible."
+		// 		}
+
+
+		// 	else if (malay == N || ic == N){
+		// 		if (checkSub == Y) {
+		// 			output = "You are eligible to apply as fee paying students.";
+		// 		}
+		// 		else {
+		// 			output = "You are not eligible."
+		// 		}
+
+		// 	else {
+		// 		output = "Invalid input!"
+		// 	}
+		// }
+
+		if (math == "Y" && eng == "Y" && malay == "Y" && ic == "Y" && checkSub == "Y") {
+			output = "You are eligible for scholarship!";
+		}
+		else if (math == "Y" && eng == "Y" && (malay == "Y" || ic == "Y") && checkSub == "Y") {
+			output = "You are eligible to apply as fee paying students."
+		}
+		else {
+			output = "You are not eligible."
+		}
+
+		document.write(output);
+	</script>
+</head>
+<body>
+</body>
+</html>

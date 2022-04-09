@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sample</title>
+	<style type="text/css"> 
+	</style>
+
+	<script type="text/javascript">
+
+		var time = prompt("Enter time (in 24hr): ");
+		var weather = prompt("Enter the weather (1: sunny) (2: rainy)");
+
+		var display;
+
+		if (time >= 0 && time <= 6) {
+			display = "Too early!";
+		}
+		// else if ((time >= 7 && time <= 16) && weather == 1) {
+		// 	display = "Let's play outside!";
+		// }
+		// else if ((time >= 7 && time <= 16) && weather == 2) {
+		// 	display = "Let's play indoor!";
+		// }
+		else if (time >= 7 && time <= 16) {
+			if (weather == 1) {
+				display = "Let's play outside!";
+			}
+			else if (weather == 2) {
+				display = "Let's play indoor!";
+			}
+			else {
+				display	= "Invalid weather!";
+			}
+		}
+
+// 		-----------------------------------------------------
+		// else if ((time >= 17 && time <= 21) && weather == 1) {
+		// 	display = "Let's go to cinema!";
+		// }
+		// else if ((time >= 17 && time <= 21) && weather == 2) {
+		// 	display = "Watch movie at home";
+		// }
+
+		else if (time >= 17 && time <= 21) {
+			if (weather == 1) {
+				display = "Let's go to cinema!";
+			}
+			else if (weather == 2) {
+				display = "Watch movie at home";
+			}
+			else {
+				display	= "Invalid weather!";
+			}
+			
+		}
+
+
+		else if (time >=22 && time <=24) {
+			display	= "It's bed time!";
+		}
+		else {
+			display = "Invalid time!"
+		}
+
+		document.write(display);
+
+	</script>
+
+</head>
+<body>
+</body>
+</html>
