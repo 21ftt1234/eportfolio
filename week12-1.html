@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week12-1 (DOM)</title>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<!-- <input id="name" type="text" name="">
+	<div id="msg"></div>
+	<button onclick="copyToDiv()">Copy to div</button>
+
+	<script type="text/javascript">
+		function copyToDiv() {
+			var name= document.getElementById("name");
+			var msg = document.getElementById("msg");
+
+			msg.innerHTML += name.value;
+
+			name.style.border = "5px solid cyan";
+
+			name.style.fontSize = "2em";
+		}
+
+	</script> -->
+
+	<!-- EXERCISE 1 -->
+
+	Name: <input type="text" id="name" name=""><br>
+	Age: <input type="text" id="age" name=""><br>
+	Education background: <select id="edu">
+		<option value="O Level">O Level</option>
+		<option value="A Level">A Level</option>
+		<option value="Diploma">Diploma</option>
+	</select><br>
+
+	<textarea id="address" placeholder="Address"></textarea><br>
+	<button onclick="displayOutput()">SUBMIT</button><br><br>
+	<div id="msg"></div>
+
+
+	<script type="text/javascript">
+		function displayOutput() {
+			var name = document.getElementById("name");
+			var age = document.getElementById("age");
+			var edu = document.getElementById("edu");
+			var address = document.getElementById("address");
+			var msg = document.getElementById("msg");
+
+			msg.innerHTML = "Hi " + name.value;
+			msg.innerHTML += "<br>This year you will be " + age.value + " year old."
+			msg.innerHTML += "<br>Your education background is " + edu.value;
+			msg.innerHTML += "<br>Your address: <br>" + address.value;
+		}
+
+		function featuresTest1() { // change to upper case
+			var name = document.getElemtnById("name");
+			name.value = name.value.toUpperCase();
+
+			// at input, add onkeyup="featuresTest1()"
+		}
+
+		function featuresTest2() { // change font size bigger
+			var name = document.getElemtnById("name");
+			name.style.fontSize = "1.5em";
+
+			// at input, add onfocus="featuresTest2()"
+		}
+
+		function featuresTest3() { // return text back to normal when not focused
+			var name = document.getElemtnById("name");
+			name.style.fontSize = "1em";
+
+			// at input, add onblur="featuresTest2()"
+		}
+
+	</script>
+
+</body>
+</html>

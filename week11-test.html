@@ -26,13 +26,14 @@
 			alert("Sorry " + nameInput + ". You input an invalid choice.");
 		}
 
+
 		if (timeInput <= 11) {
 			var day = "morning";
 			var output = "Good Morning " + nameInput + "\nYou entered " + num1 + " & " + num2 + "\nYou decided to " + selection + " them \nThe answer is " + result + "\nEnjoy your " + day;
 		}
 		else if (timeInput >=12 && timeInput <=24) {
 			var day = "Enjoy the rest of your days";
-			var output = "Good Morning " + nameInput + "\nYou entered " + num1 + " & " + num2 + "\nYou decided to " + selection + " them \nThe answer is " + result + "\nEnjoy your " + day;
+			var output = "Good Morning " + nameInput + "\nYou entered " + num1 + " & " + num2 + "\nYou decided to " + selection + " them \nThe answer is " + result + "\n" + day;
 		}
 		else {
 			var output = "Sorry " + nameInput +". I need a valid time."; 

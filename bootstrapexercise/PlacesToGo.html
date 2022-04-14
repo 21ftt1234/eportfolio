@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PLACES TO GO</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<style type="text/css">
+		
+    /*COLLAPSE AND OFFCANVAS STYLING*/
+
+    /*EVENTS PIC SIZE*/
+    .eventPic {
+      width: 80%;
+      height: 20%;
+    }
+
+    .offCanvasPic {
+      width: 80%;
+      height: 80%;
+    }
+
+    .PTGHead {
+      width: 100%;
+      padding: 10px 10px;
+      background-color: yellow;
+      text-align: center;
+    }
+
+    .eventsHead {
+      width: 100%;
+      padding: 10px 10px;
+      margin-top: 20px;
+      background-color: yellow;
+      text-align: center;
+    }
+
+    .displayVertical {
+      display: block;
+      margin: 0px auto;
+      padding: 20px 0px;
+    }
+
+
+    /*PLACES TO GO GRID*/
+    .PTGGrid {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: auto auto auto;
+      align-items: center;
+      text-align: center;
+      margin-top: 0px;
+    }
+
+    .spanMid {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+    }
+
+    .card:nth-child(3) {
+      width: 50%;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    /*MOBILE VIEW*/
+
+    @media only screen and (max-width: 479px) {
+    .PTGGrid {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: auto auto auto auto auto;
+      align-items: center;
+      text-align: center;
+      margin-top: 0px;
+    }
+
+    .card:nth-child(1) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    .card:nth-child(2) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+
+    .card:nth-child(3) {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+
+      width: 100%;
+    }
+
+    .card:nth-child(4) {
+      grid-column: 1 / 2;
+      grid-row: 4 / 5;
+    }
+
+    .card:nth-child(5) {
+      grid-column: 1 / 2;
+      grid-row: 5 / 6;
+    }
+	</style>
+</head>
+<body>
+
+<!-- AFIF's PART -->
+
+<!-- Collapse -->
+<!-- Taken from https://www.w3schools.com/bootstrap5/bootstrap_collapse.php -->
+
+  <div class="PTGHead">
+    <h2>PLACES TO GO</h2>
+    <h4>Desktop view - Collapse (Accordion)</h4>
+  </div>
+
+  <div class="container mt-3">
+
+    <h3>Add Mega Menu / Map</h3><br>
+    <h2>BRUNEI MUARA</h2>
+
+  <div id="accordion1" class="PTGGrid">
+
+      <!-- ITEM #1 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+
+          <!-- Carousel -->
+          <div id="demo1_ptg" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo1_ptg" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo1_ptg" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo1_ptg" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P1/jerudongpark_1.jpg" alt="jerudongpark_1.jpg" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BM/P1/jerudongpark_2.jpg" alt="jerudongpark_2.jpg" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P1/jerudongpark_3.jpg" alt="jerudongpark_3.jpg" class="d-block" style="width:100%">
+            </div>
+          </div>
+        </div>
+
+          </a>
+        </div>
+        <div id="collapseOne" class="collapse" data-bs-parent="#accordion1">
+          <div class="card-body">
+            <h4>JERUDONG PARK</h4><br>Go on a rollercoaster ride with friends and enjoy a picnic at the garden, or get on a magical boat ride and spend some time with a special someone. Wet your feet and refresh yourself at the water park, or take a whimsical stroll along the park's magnificent landscapes. And make sure to take a picture at the Diamond Monument before you leave!
+            <br><br>
+            For more information, visit their IG @jerudongpark or visit their website at www.jerudongpark.com
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- ITEM #2 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+
+          <!-- Carousel -->
+          <div id="demo2_ptg" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo2_ptg" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo2_ptg" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo2_ptg" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P2/jalanroberts_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BM/P2/jalanroberts_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P2/jalanroberts_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+        </div>
+        </a>
+        </div>
+        <div id="collapseTwo" class="collapse" data-bs-parent="#accordion1">
+          <div class="card-body">
+            <h4>JALAN ROBERTS</h4><br>The most photogenic street in downtown Bandar Seri Begawan is Jalan Roberts, next to Jalan Pretty and Jalan McArthur. This street is named after E. Roberts, the first Head of Public Works Department in 1906. A walk through this technicolour lane comprising vintage shophouses with classic louvered wooden shutters will reward you with a pop of colour for your Instagram feed. Car-free Sunday is the perfect time to stroll around here when pedestrians are kings of the street for the day.
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- ITEM #3 -->
+
+      <div class="card spanMid">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+
+          <!-- Carousel -->
+          <div id="demo3_ptg" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo3_ptg" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo3_ptg" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo3_ptg" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P3/joyfulgarden_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BM/P3/joyfulgarden_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P3/joyfulgarden_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </button>
+        </div>
+          </a>
+        </div>
+
+        <div id="collapseThree" class="collapse" data-bs-parent="#accordion1">
+          <div class="card-body">
+            <h4>JOYFUL GARDEN</h4><br>Built with love to cultivate joy, Joyful Garden is a tranquil escape that is much needed. The lush garden is home to a plethora of plants and decorated with wooden swings, delightful gazebos and furniture pieces inspired by the Chinese culture. Walk across small bridges and unwind as you listen to the calming sounds of water streaming down from the hill into the ponds. This spot is perfect for visitors who want to slow down and take some time to unwind. And if you come at the right time, you might be able to join in on a Qi Gong session.<br><br>The Joyful Garden is free of charge to enter. It is located at No. 40, Simpang 214, Kampung Subok Open daily from 7am – 6pm on Monday to Thursday and Saturday, 7am – 6:30pm on Friday and Sunday.
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- ITEM #4 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFour">
+
+          <!-- Carousel -->
+          <div id="demo4_ptg" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo4_ptg" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo4_ptg" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo4_ptg" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P4/kampongayer_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BM/P4/kampongayer_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P4/kampongayer_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+        </div>
+        </a>
+        </div>
+        <div id="collapseFour" class="collapse" data-bs-parent="#accordion1">
+          <div class="card-body">
+            <h4>KAMPONG AYER</h4><br>Kampong Ayer is one of the largest water settlements in Southeast Asia, this expanse of settlements on stilts is a must-visit for any traveler wishing to complete their tour of Brunei. The Brunei River is home to a lively community. Start off with a scenic boat ride of the Brunei River before taking a walk along wooden paths and bridges rich with culture and history. Complete your experience by paying a visit to the Cultural and Tourism Gallery and learn why Kampong Ayer is known as the "Venice of The East".<br><br>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- ITEM #5 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFive">
+
+          <!-- Carousel -->
+          <div id="demo5_ptg" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo5_ptg" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo5_ptg" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo5_ptg" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P5/lugulake_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BM/P5/lugulake_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P5/lugulake_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+        </div>
+        </a>
+        </div>
+        <div id="collapseFive" class="collapse" data-bs-parent="#accordion1">
+          <div class="card-body">
+            <h4>LUGU LAKE</h4><br>A former man-made pit turned freshwater lagoon, Lugu Lake will definitely dazzle the eyes with its uniquely turquoise lustre. On any given weekend, you can find local resident kids waddling and splashing around in the blue lake. For those who are more experienced on the water, you can try your hand at paddleboarding! Soak in the warm rays as you float atop the dreamy blue lagoon.
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+
+  <div>
+    <br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+
+
+  </div>
+</body>
+</html>
