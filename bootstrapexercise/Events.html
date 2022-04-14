@@ -6,11 +6,9 @@
 	<title>EVENTS</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 
-  <script type="text/javascript">
-    
-  </script>
 	<style type="text/css">
 
     /*OFF-CANVAS GRID*/
@@ -174,12 +172,13 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">WEEK</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">WEEK 1</a></li>
-          <li><a class="dropdown-item" href="#">WEEK 2</a></li>
-          <li><a class="dropdown-item" href="#">WEEK 3</a></li>
-          <li><a class="dropdown-item" href="#">WEEK 4</a></li>
-          <li><a class="dropdown-item" href="#">WEEK 5</a></li>
+        <ul class="dropdown-menu filter1" data-fbdeep="1">
+          <li><a class="dropdown-item" href="#" data-fbflush="true" value="none">Select</a></li>
+          <li><a class="dropdown-item" href="#" value="WEEK1">WEEK 1</a></li>
+          <li><a class="dropdown-item" href="#" value="WEEK2">WEEK 2</a></li>
+          <li><a class="dropdown-item" href="#" value="WEEK3">WEEK 3</a></li>
+          <li><a class="dropdown-item" href="#" value="WEEK4">WEEK 4</a></li>
+          <li><a class="dropdown-item" href="#" value="WEEK5">WEEK 5</a></li>
         </ul>
       </li>
 
@@ -225,7 +224,7 @@
 
   <!-- EDIT -->
   <div class="container-fluid mt-3 eventsGrid">
-    <div><img class="eventPic" src="Images/Events/event1.jpg" data-bs-toggle="modal" data-bs-target="#mevent1"></div>
+    <div class="filterbucks WEEK1"><img class="eventPic" src="Images/Events/event1.jpg" data-bs-toggle="modal" data-bs-target="#mevent1"></div>
     <div><img class="eventPic" src="Images/Events/event2.jpg" data-bs-toggle="modal" data-bs-target="#mevent2"></div>
     <div><img class="eventPic" src="Images/Events/event3.jpg" data-bs-toggle="modal" data-bs-target="#mevent3"></div>
     <div><img class="eventPic" src="Images/Events/event4.jpg" data-bs-toggle="modal" data-bs-target="#mevent4"></div>
@@ -558,6 +557,22 @@
       </div>
     </div>
   </div>
+
+  <script>
+
+    jQuery(document).ready(function(){
+        $(".filter1").filterbucks({
+      HideUnrelateds:true,
+      ButtonCssOpacity:true,
+    });
+    $(".filter1").on("filterbucks-start",function(){
+      console.log("Start!");
+    });
+    $(".filter1").on("filterbucks-end",function(){
+      console.log("End!");
+    });
+    });
+    </script>
 
 
 
