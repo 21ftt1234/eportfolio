@@ -4,9 +4,16 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>EVENTS</title>
+
+  <!-- BOOTSTRAP -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- FILTERBUCKS -->
+  <!-- Taken from https://github.com/cancmrt/filterbucks, code continues at line *** -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/minty/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="filterbucks.js"></script>
 
 
 	<style type="text/css">
@@ -145,13 +152,14 @@
       margin: 0 auto;
     }
 
-    .nav-item .dropdown:hover {
-      
+    .dropdown-item:hover {
+      background: #ddd;
     }
 
-   
-
-
+    .dropdown:hover {
+      background: #ddd;
+      color: white;
+    }
 
 	</style>
 </head>
@@ -171,37 +179,60 @@
     <ul class="nav nav-tabs">
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">WEEK</a>
-        <ul class="dropdown-menu filter1" data-fbdeep="1">
-          <li><a class="dropdown-item" href="#" data-fbflush="true" value="none">Select</a></li>
-          <li><a class="dropdown-item" href="#" value="WEEK1">WEEK 1</a></li>
-          <li><a class="dropdown-item" href="#" value="WEEK2">WEEK 2</a></li>
-          <li><a class="dropdown-item" href="#" value="WEEK3">WEEK 3</a></li>
-          <li><a class="dropdown-item" href="#" value="WEEK4">WEEK 4</a></li>
-          <li><a class="dropdown-item" href="#" value="WEEK5">WEEK 5</a></li>
+        <a class="nav-link" data-bs-toggle="dropdown">WEEK</a>
+        <ul class="dropdown-menu" id="WEEK">
+
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="1" data-fbflush="true" value="none">SELECT</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="1" value="WEEK1">WEEK 1 (1-3 DEC)</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="1" value="WEEK2">WEEK 2 (4-10 DEC)</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="1" value="WEEK3">WEEK 3 (11-17 DEC)</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="1" value="WEEK4">WEEK 4 (18-24 DEC)</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="1" value="WEEK5">WEEK 5 (25-31 DEC)</a></div>
+
         </ul>
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">DISTRICT</a>
+        <a class="nav-link" data-bs-toggle="dropdown">DISTRICT</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">BRUNEI MUARA</a></li>
-          <li><a class="dropdown-item" href="#">TUTONG</a></li>
-          <li><a class="dropdown-item" href="#">BELAIT</a></li>
-          <li><a class="dropdown-item" href="#">TEMBURONG</a></li>
+
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" data-fbflush="true" value="none">SELECT</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" value="BRUNEI MUARA">BRUNEI MUARA</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" value="TUTONG">TUTONG</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" value="BELAIT">BELAIT</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" value="TEMBURONG">TEMBURONG</a></div>
         </ul>
       </li>
 
+
+
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">TYPE</a>
+        <a class="nav-link" data-bs-toggle="dropdown">TYPE</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">INDOOR</a></li>
-          <li><a class="dropdown-item" href="#">OUTDOOR</a></li>
+
+          <div><a id="TYPE" href="#" class="dropdown-item filter1" data-fbdeep="3" data-fbflush="true" value="none">SELECT</a></div>
+          <div><a id="TYPE" onclick="displayOutput()" href="#" class="dropdown-item filter1" data-fbdeep="3" value="INDOOR">INDOOR</a></div>
+          <div><a id="TYPE" onclick="displayOutput()" href="#" class="dropdown-item filter1" data-fbdeep="3" value="OUTDOOR">OUTDOOR</a></div>
+
+
         </ul>
       </li>
+
+      <script type="text/javascript">
+        
+        function displayOutput() {
+          var type = document.getElementById("TYPE");
+          var displayFilter = document.getElementById("displayFilter");
+
+          displayFilter.innerHTML = type.value;
+
+
+        }
+      </script>
 
     </ul>
   </div>
+
 
 
 
@@ -224,26 +255,34 @@
 
   <!-- EDIT -->
   <div class="container-fluid mt-3 eventsGrid">
-    <div class="filterbucks WEEK1"><img class="eventPic" src="Images/Events/event1.jpg" data-bs-toggle="modal" data-bs-target="#mevent1"></div>
-    <div><img class="eventPic" src="Images/Events/event2.jpg" data-bs-toggle="modal" data-bs-target="#mevent2"></div>
-    <div><img class="eventPic" src="Images/Events/event3.jpg" data-bs-toggle="modal" data-bs-target="#mevent3"></div>
-    <div><img class="eventPic" src="Images/Events/event4.jpg" data-bs-toggle="modal" data-bs-target="#mevent4"></div>
-    <div><img class="eventPic" src="Images/Events/event5.jpg" data-bs-toggle="modal" data-bs-target="#mevent5"></div>
-    <div><img class="eventPic" src="Images/Events/event6.jpg" data-bs-toggle="modal" data-bs-target="#mevent6"></div>
-    <div><img class="eventPic" src="Images/Events/event7.jpg" data-bs-toggle="modal" data-bs-target="#mevent7"></div>
-    <div><img class="eventPic" src="Images/Events/event8.jpg" data-bs-toggle="modal" data-bs-target="#mevent8"></div>
-    <div><img class="eventPic" src="Images/Events/event9.jpg" data-bs-toggle="modal" data-bs-target="#mevent9"></div>
-    <div><img class="eventPic" src="Images/Events/event10.jpg" data-bs-toggle="modal" data-bs-target="#mevent10"></div>
-    <div><img class="eventPic" src="Images/Events/event11.jpg" data-bs-toggle="modal" data-bs-target="#mevent11"></div>
-    <div><img class="eventPic" src="Images/Events/event12.jpg" data-bs-toggle="modal" data-bs-target="#mevent12"></div>
+
+
+    <div class="filterbucks WEEK1 BRUNEIMUARA INDOOR"><img class="eventPic rounded" src="Images/Events/event1.jpg" data-bs-toggle="modal" data-bs-target="#mevent1"></div>
+
+    <div class="filterbucks WEEK1 BRUNEIMUARA OUTDOOR"><img class="eventPic rounded" src="Images/Events/event2.jpg" data-bs-toggle="modal" data-bs-target="#mevent2"></div>
+
+    <div class="filterbucks WEEK2 BRUNEIMUARA INDOOR"><img class="eventPic rounded" src="Images/Events/event3.jpg" data-bs-toggle="modal" data-bs-target="#mevent3"></div>
+
+    <div class="filterbucks WEEK2 TUTONG OUTDOOR"><img class="eventPic rounded" src="Images/Events/event4.jpg" data-bs-toggle="modal" data-bs-target="#mevent4"></div>
+
+    <div class="filterbucks WEEK3 TUTONG INDOOR"><img class="eventPic rounded" src="Images/Events/event5.jpg" data-bs-toggle="modal" data-bs-target="#mevent5"></div>
+
+    <div class="filterbucks WEEK3 TUTONG OUTDOOR"><img class="eventPic rounded" src="Images/Events/event6.jpg" data-bs-toggle="modal" data-bs-target="#mevent6"></div>
+
+    <div class="filterbucks WEEK4 BELAIT INDOOR"><img class="eventPic rounded" src="Images/Events/event7.jpg" data-bs-toggle="modal" data-bs-target="#mevent7"></div>
+
+    <div class="filterbucks WEEK4 BELAIT INDOOR"><img class="eventPic rounded" src="Images/Events/event8.jpg" data-bs-toggle="modal" data-bs-target="#mevent8"></div>
+
+    <div class="filterbucks WEEK5 BELAIT OUTDOOR"><img class="eventPic rounded" src="Images/Events/event9.jpg" data-bs-toggle="modal" data-bs-target="#mevent9"></div>
+
+    <div class="filterbucks WEEK5 TEMBURONG INDOOR"><img class="eventPic rounded" src="Images/Events/event10.jpg" data-bs-toggle="modal" data-bs-target="#mevent10"></div>
+
+    <div class="filterbucks WEEK1 TEMBURONG OUTDOOR"><img class="eventPic rounded" src="Images/Events/event11.jpg" data-bs-toggle="modal" data-bs-target="#mevent11"></div>
+
+    <div class="filterbucks WEEK2 TEMBURONG INDOOR"><img class="eventPic rounded" src="Images/Events/event12.jpg" data-bs-toggle="modal" data-bs-target="#mevent12"></div>
+
   </div>
 
-  <!-- div class="container mt-3">
-  
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-    Open modal
-    </button>
-  </div> -->
 
   <!-- EVENT 1-->
   <!-- The Modal -->
@@ -272,7 +311,6 @@
     </div>
   </div>
 
-
   <!-- EVENT 2-->
   <div class="modal fade" id="mevent2">
     <div class="modal-dialog">
@@ -297,7 +335,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- EVENT 3-->
   <div class="modal fade" id="mevent3">
@@ -324,7 +361,6 @@
     </div>
   </div>
 
-
   <!-- EVENT 4-->
   <div class="modal fade" id="mevent4">
     <div class="modal-dialog">
@@ -349,7 +385,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- EVENT 5-->
   <div class="modal fade" id="mevent5">
@@ -376,7 +411,6 @@
     </div>
   </div>
 
-
   <!-- EVENT 6-->
   <div class="modal fade" id="mevent6">
     <div class="modal-dialog">
@@ -401,7 +435,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- EVENT 7-->
   <div class="modal fade" id="mevent7">
@@ -428,7 +461,6 @@
     </div>
   </div>
 
-
   <!-- EVENT 8-->
   <div class="modal fade" id="mevent8">
     <div class="modal-dialog">
@@ -453,7 +485,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- EVENT 9-->
   <div class="modal fade" id="mevent9">
@@ -480,7 +511,6 @@
     </div>
   </div>
 
-
   <!-- EVENT 10-->
   <div class="modal fade" id="mevent10">
     <div class="modal-dialog">
@@ -505,7 +535,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- EVENT 11-->
   <div class="modal fade" id="mevent11">
@@ -532,7 +561,6 @@
     </div>
   </div>
 
-
   <!-- EVENT 12-->
   <div class="modal fade" id="mevent12">
     <div class="modal-dialog">
@@ -558,20 +586,24 @@
     </div>
   </div>
 
+
+  <!-- FILTERBUCKS SCRIPT -->
   <script>
 
     jQuery(document).ready(function(){
-        $(".filter1").filterbucks({
-      HideUnrelateds:true,
-      ButtonCssOpacity:true,
+      $(".filter1").filterbucks({
+        HideUnrelateds:true,
+        BtnSingleChoise:true,
+        ButtonCssOpacity:true
+      });
+      $(".filter1").on("filterbucks-start",function(){
+        console.log("Start!");
+      });
+      $(".filter1").on("filterbucks-end",function(){
+        console.log("End!");
+      });
     });
-    $(".filter1").on("filterbucks-start",function(){
-      console.log("Start!");
-    });
-    $(".filter1").on("filterbucks-end",function(){
-      console.log("End!");
-    });
-    });
+
     </script>
 
 
