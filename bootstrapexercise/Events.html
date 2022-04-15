@@ -156,9 +156,13 @@
       background: #ddd;
     }
 
-    .dropdown:hover {
+    .dropdown:hover, .dropdown>a:hover{
       background: #ddd;
       color: white;
+    }
+
+    .dropdown>a {
+      color: black;
     }
 
 	</style>
@@ -170,7 +174,7 @@
 
 
   <div class="eventsHead">
-    <h2>EVENTS - <div id="displayFilter"></div></h2>
+    <h2>EVENTS - <div id="msg"></div></h2>
   </div>
 
 
@@ -179,7 +183,7 @@
     <ul class="nav nav-tabs">
 
       <li class="nav-item dropdown">
-        <a class="nav-link" data-bs-toggle="dropdown">WEEK</a>
+        <a class="nav-link" data-bs-toggle="dropdown" href="#">WEEK</a>
         <ul class="dropdown-menu" id="WEEK">
 
           <div><a href="#" class="dropdown-item filter1" data-fbdeep="1" data-fbflush="true" value="none">SELECT</a></div>
@@ -193,11 +197,11 @@
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link" data-bs-toggle="dropdown">DISTRICT</a>
+        <a class="nav-link" data-bs-toggle="dropdown" href="#">DISTRICT</a>
         <ul class="dropdown-menu">
 
           <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" data-fbflush="true" value="none">SELECT</a></div>
-          <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" value="BRUNEI MUARA">BRUNEI MUARA</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" value="BRUNEIMUARA">BRUNEI MUARA</a></div>
           <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" value="TUTONG">TUTONG</a></div>
           <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" value="BELAIT">BELAIT</a></div>
           <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" value="TEMBURONG">TEMBURONG</a></div>
@@ -207,12 +211,12 @@
 
 
       <li class="nav-item dropdown">
-        <a class="nav-link" data-bs-toggle="dropdown">TYPE</a>
+        <a class="nav-link" data-bs-toggle="dropdown" href="#">TYPE</a>
         <ul class="dropdown-menu">
 
-          <div><a id="TYPE" href="#" class="dropdown-item filter1" data-fbdeep="3" data-fbflush="true" value="none">SELECT</a></div>
-          <div><a id="TYPE" onclick="displayOutput()" href="#" class="dropdown-item filter1" data-fbdeep="3" value="INDOOR">INDOOR</a></div>
-          <div><a id="TYPE" onclick="displayOutput()" href="#" class="dropdown-item filter1" data-fbdeep="3" value="OUTDOOR">OUTDOOR</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="3" data-fbflush="true" value="none">SELECT</a></div>
+          <div><a id="type" onclick="displayOutput()" href="#" class="dropdown-item filter1" data-fbdeep="3" value="INDOOR">INDOOR</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="3" value="OUTDOOR">OUTDOOR</a></div>
 
 
         </ul>
@@ -221,10 +225,10 @@
       <script type="text/javascript">
         
         function displayOutput() {
-          var type = document.getElementById("TYPE");
-          var displayFilter = document.getElementById("displayFilter");
+          var type = document.getElementById("type");
+          var msg = document.getElementById("msg");
 
-          displayFilter.innerHTML = type.value;
+          msg.innerHTML = "Hi " + type.value;
 
 
         }
