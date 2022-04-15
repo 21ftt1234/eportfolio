@@ -30,17 +30,17 @@
 
 	Name: <input type="text" id="name" name=""><br>
 	Age: <input type="text" id="age" name=""><br>
-	<!-- Education background: <select id="edu">
+	Education background: <select id="edu">
 		<option value="O Level">O Level</option>
 		<option value="A Level">A Level</option>
 		<option value="Diploma">Diploma</option>
-	</select><br> -->
+	</select><br>
 
-	<div>
+	<!-- <div>
 		<button id="br2" onclick="displayOutput()" value="bruh"><a href="#">bruh</a></button>
 		<button id="br" onclick="displayOutput()" value="bruhh"><a href="#">bruhh</a></button>
 		<button id="br" onclick="displayOutput()" value="bruhhh"><a href="#">bruhhh</a></button>
-	</div>
+	</div> -->
 
 	<textarea id="address" placeholder="Address"></textarea><br>
 	<button onclick="displayOutput()">SUBMIT</button><br><br>
@@ -49,20 +49,19 @@
 
 	<script type="text/javascript">
 		function displayOutput() {
-			// var name = document.getElementById("name");
-			// var age = document.getElementById("age");
-			// var edu = document.getElementById("edu");
-			// var address = document.getElementById("address");
+			var name = document.getElementById("name");
+			var age = document.getElementById("age");
+			var edu = document.getElementById("edu");
+			var address = document.getElementById("address");
 			var msg = document.getElementById("msg");
 
-			// msg.innerHTML = "Hi " + name.value;
-			// msg.innerHTML += "<br>This year you will be " + age.value + " year old."
-			// msg.innerHTML += "<br>Your education background is " + edu.value;
-			// msg.innerHTML += "<br>Your address: <br>" + address.value;
+			msg.innerHTML = "Hi " + name.value;
+			msg.innerHTML += "<br>This year you will be " + age.value + " year old."
+			msg.innerHTML += "<br>Your education background is " + edu.value;
+			msg.innerHTML += "<br>Your address: <br>" + address.value;
 
-			var br = document.getElementById("br");
-
-			msg.innerHTML = "Hi " + br.value;
+			// var br = document.getElementById("br");
+			// msg.innerHTML = "Hi " + br.value;
 		}
 
 		function featuresTest1() { // change to upper case
