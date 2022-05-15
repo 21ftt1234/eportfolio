@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week14</title>
+	<style type="text/css">
+	</style>
+</head>
+
+<body>
+
+<!-- <body id="bodyy"> -->
+
+	<!-- <input type="text" id="color" name="" onkeyup="changeBackground1()"> -->
+
+	<!-- <input type="text" name="" onkeyup="changeBackground3(this.value)">
+
+	<script type="text/javascript">
+		function changeBackground1() {
+			var body = document.getElementById("bodyy")
+			var color = document.getElementById("color");
+
+			document.body.style.backgroundColor = color.value;
+		}
+
+		function changeBackground2() {
+			var body = document.getElementById("bodyy")
+			var color = document.getElementById("color");
+
+			document.body.style.backgroundColor = color.value;
+		}
+
+		function changeBackground3(color) {
+			document.body.style.backgroundColor = color;
+		}
+	</script> -->
+	
+
+	<button onclick="fireup1()">1</button>
+	<button onclick="fireup2()">2</button>
+	<button onclick="fireup3()">3</button>
+
+	<script type="text/javascript">
+
+		var discount = 10;
+		
+		function fireup1() {
+			discount *= 10;
+			alert("Discount: " + discount);
+			alert("Sales: " + sales);
+			sales += 1000;
+
+		}
+
+		function fireup2() {
+			alert("Discount: " + discount);
+			alert("Sales: " + sales);
+			alert("Name: " + name);
+
+		}
+
+		function fireup3() {
+			sales = 1000;
+			var name = "Ahmad";
+			alert("Name: " + name);
+			alert("Sales: " + sales);
+
+			{let x = 10;
+				alert("X is {} " + x)}
+		}
+
+	</script>
+
+
+</body>
+</html>
