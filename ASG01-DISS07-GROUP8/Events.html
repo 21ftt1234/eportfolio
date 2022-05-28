@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events</title>
+
+  <!-- IMPORT BOOTSTRAP 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- FILTERBUCKS -->
+  <!-- Taken from https://github.com/cancmrt/filterbucks, code continues at line *** -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/minty/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="js/filterbucks.js"></script>
+
+  <!-- FOOTER -->
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+
+  <style type="text/css">
+
+    html {
+      height: 100%;
+    }
+
+    /*NAVBAR*/
+    /*.navbar {
+      transition: background 0.6s;
+    }
+
+    .navbar-toggler-icon {
+      color: #ffffff !important;
+    }
+
+    .nav-link {
+      color: #FFFFFF;
+      font-weight: bolder;
+    }*/
+
+
+    .eventsHead {
+      width: 100%;
+      height: 30vh;
+      padding: 10px 10px;
+      text-align: left;
+      padding: 20px 0px;
+      padding-left: 15%; 
+      background-image: url("images/eventsbg.jpg");
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 100% !important;
+      /*box-shadow: inset 0px 30px 20px #3B3B3B;*/
+      box-shadow: inset 0px 30px 10px rgba(0, 0, 0, 0.5);
+      position:relative;
+    }
+
+    h2 {
+      position:absolute; bottom:0; left:30;
+      color: #FFFFFF;
+      font-family: 'Poppins', sans-serif; font-weight: 800;
+      font-size: 3em;
+    }
+    .eventPic {
+      width: 100%;
+    }
+
+    .eventsGrid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: auto;
+    }
+
+    .eventsGrid>div {
+      margin: 10px;
+    }
+
+    /*MODAL*/
+
+    .modalGrid {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(6, auto);
+    }
+
+    .modalGrid>div {
+      background-color: lightgray;
+      margin-top: 1%;
+      padding: 2% 5%;
+    }
+
+    .modalGrid>div:nth-child(1) {
+      text-align: center;
+      padding: 1% 1%;
+      margin: 0px auto;
+    }
+
+
+
+
+    .nav-tabs {
+      align-items: center;
+    }
+
+    .nav-item1 {
+      border: solid 1px;
+      width: 33.33%;
+      text-align: center;
+      padding: 1px 1px;
+    }
+
+    .dropdown-menu {
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .dropdown-item:hover {
+      background: #ddd;
+    }
+
+    .dropdown:hover, .dropdown>a:hover{
+      background: #ddd;
+      color: white;
+    }
+
+    .dropdown>a {
+      color: black;
+    }
+
+
+
+
+    /*MODIFY*/
+
+    div:nth-child(1)>.navbar {
+      transition: background 0.6s;
+    }
+
+    .link1>span {
+      color: #ffffff !important;
+    }
+
+    .nav-link {
+      color: #FFFFFF;
+      font-weight: bolder;
+    }
+
+    button.navbar-toggler {
+      background-image: url("images/burger-menu.png");
+      background-size: 100% 100%;
+      border: solid 1px;
+    }
+
+/*--------FOOTER---------*/
+.modal-title{
+        color: #000000;
+      }
+
+      .mb-3, .mt-3{
+        color: #7a7a7a;
+      }
+
+      .col-md-2{
+        margin: auto;
+      }
+
+      #demo1 {
+        padding-right: 10px;
+      }
+
+      #prevEvents {
+        float: right;
+      }
+
+      #bold{
+        font-weight: bold;
+      }
+
+      #green {
+        color: #79b6e4
+      }
+
+
+
+    @media only screen and (max-width: 799px) {
+      .eventsGrid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-auto-rows: auto;
+      }
+
+      .eventsGrid>div {
+        margin: 10px;
+      }
+
+
+    }
+
+    @media only screen and (max-width: 479px) {
+      .eventsGrid {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-auto-rows: auto;
+      }
+
+      .eventsGrid>div {
+        margin: 10px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+
+
+
+<div>
+  <nav id="navscroll" class="navbar fixed-top navbar-expand-md ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="Homepage.html"><img src="images/bdflogonav.png" width="50" height="50" ></a>
+      <button class="navbar-toggler link1" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 link2">
+          <li class="nav-item">
+            <a class="nav-link navtext" href="Events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="PlacesToGo.html">Places to Go</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+<!-- NAVBAR FUNCTION -->
+<script type="text/javascript">
+    window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    
+    document.getElementById("navscroll").style.background = "#FECE0B";
+    document.getElementsByClassName("nav-link")[0].style.color = "black";
+    document.getElementsByClassName("nav-link")[1].style.color = "black";
+    document.getElementsByClassName("nav-link")[2].style.color = "black";//doesnt work 
+  } else {
+    document.getElementsByClassName("nav-link")[0].style.color = "#FFFFFF";
+    document.getElementsByClassName("nav-link")[1].style.color = "#FFFFFF";
+    document.getElementsByClassName("nav-link")[2].style.color = "#FFFFFF";
+    document.getElementById("navscroll").style.background = "none";
+  }
+}
+</script>
+
+  <div class="eventsHead">
+    <h2>EVENTS</h2>
+  </div>
+
+
+<!-- ----------------NAVIGATION BAR-- BOOTSTRAP FEATURE #2 -->
+<!-- Taken from https://www.w3schools.com/bootstrap5/bootstrap_navbar.php -->
+
+  <div class="container mt-3">
+    <ul class="nav nav-tabs">
+
+      <li class="nav-item nav-item1 dropdown">
+        <a class="nav-link" data-bs-toggle="dropdown" href="#">WEEK</a>
+        <ul class="dropdown-menu">
+
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="1" data-fbflush="true" value="none">SELECT</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="1" value="w1">WEEK 1 (1-3 DEC)</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="1" value="w2">WEEK 2 (4-10 DEC)</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="1" value="w3">WEEK 3 (11-17 DEC)</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="1" value="w4">WEEK 4 (18-24 DEC)</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="1" value="w5">WEEK 5 (25-31 DEC)</a></div>
+
+        </ul>
+      </li>
+
+      <li class="nav-item nav-item1 dropdown">
+        <a class="nav-link" data-bs-toggle="dropdown" href="#">DISTRICT</a>
+        <ul class="dropdown-menu">
+
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" data-fbflush="true" value="none">SELECT</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" value="bm">BRUNEI MUARA</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" value="tut">TUTONG</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" value="bel">BELAIT</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="2" value="tem">TEMBURONG</a></div>
+        </ul>
+      </li>
+
+
+
+      <li class="nav-item nav-item1 dropdown">
+        <a class="nav-link" data-bs-toggle="dropdown" href="#">TYPE</a>
+        <ul class="dropdown-menu">
+
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="3" data-fbflush="true" value="none">SELECT</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="3" value="ind">INDOOR</a></div>
+          <div><a href="#" class="dropdown-item filter1" data-fbdeep="3" value="outd">OUTDOOR</a></div>
+
+        </ul>
+      </li>
+
+
+    </ul>
+  </div>
+
+<!-- ----------------EVENTS MODAL-- BOOTSTRAP FEATURE #3 -->
+<!-- Taken from https://www.w3schools.com/bootstrap5/bootstrap_modal.php -->
+
+  <div class="container-fluid mt-3 eventsGrid">
+
+
+    <div class="filterbucks w1 w2 w3 bm tut bel tem ind"><img class="eventPic rounded" src="Images/Events/event1.jpg" data-bs-toggle="modal" data-bs-target="#mevent1"></div>
+
+    <div class="filterbucks w2 bm ind"><img class="eventPic rounded" src="Images/Events/event2.jpg" data-bs-toggle="modal" data-bs-target="#mevent2"></div>
+
+    <div class="filterbucks w2 w3 bm tut bel tem outd"><img class="eventPic rounded" src="Images/Events/event3.jpg" data-bs-toggle="modal" data-bs-target="#mevent3"></div>
+
+    <div class="filterbucks w1 w2 w3 w4 w5 bm tut bel tem outd"><img class="eventPic rounded" src="Images/Events/event4.jpg" data-bs-toggle="modal" data-bs-target="#mevent4"></div>
+
+    <div class="filterbucks w4 w5 bm tut bel outd"><img class="eventPic rounded" src="Images/Events/event5.jpg" data-bs-toggle="modal" data-bs-target="#mevent5"></div>
+
+    <div class="filterbucks w2 w3 w4 bm tut bel ind"><img class="eventPic rounded" src="Images/Events/event6.jpg" data-bs-toggle="modal" data-bs-target="#mevent6"></div>
+
+    <div class="filterbucks w1 bm ind"><img class="eventPic rounded" src="Images/Events/event7.jpg" data-bs-toggle="modal" data-bs-target="#mevent7"></div>
+
+    <div class="filterbucks w4 bel ind"><img class="eventPic rounded" src="Images/Events/event8.jpg" data-bs-toggle="modal" data-bs-target="#mevent8"></div>
+
+    <div class="filterbucks w5 bm tut bel tem ind"><img class="eventPic rounded" src="Images/Events/event9.jpg" data-bs-toggle="modal" data-bs-target="#mevent9"></div>
+
+    <div class="filterbucks w4 w5 bm ind"><img class="eventPic rounded" src="Images/Events/event10.jpg" data-bs-toggle="modal" data-bs-target="#mevent10"></div>
+
+    <div class="filterbucks w1 w2 w3 w4 w5 bm outd"><img class="eventPic rounded" src="Images/Events/event11.jpg" data-bs-toggle="modal" data-bs-target="#mevent11"></div>
+
+    <div class="filterbucks w2 tut outd"><img class="eventPic rounded" src="Images/Events/event12.jpg" data-bs-toggle="modal" data-bs-target="#mevent12"></div>
+
+  </div>
+
+
+  <!-- EVENT 1-->
+  <!-- The Modal -->
+  <div class="modal fade" id="mevent1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body modalGrid">
+          <div><img class="rounded" src="Images/Events/event1.jpg" style="width:95%"></div>
+          <div><h6>Brooks: Run Happy At Home Challenge</h6></div>
+          <div><h6>Organizer</h6>AKIF Media Marketing and Event</div>
+          <div><h6>Time</h6>[WEEK 1-3] December 3 (Saturday) - December 16 (Friday)</div>
+          <div><h6>Type</h6>Indoor</div>
+          <div><h6>Event Description</h6>Compete in a series of medium to long-distance road races in the Brunei Run 2021. Sweet your way through the 10km Brunei Run, 21km Borneo Run, 42km Brunei Marathon and their third virtual run series – Brooks Run at Home Challenge.</div>
+
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 2-->
+  <div class="modal fade" id="mevent2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body modalGrid">
+          <div><img class="rounded" src="Images/Events/event2.jpg" style="width:95%"></div>
+          <div><h6>Arab Language Festival</h6></div>
+          <div><h6>Organizer</h6>UNISSA</div>
+          <div><h6>Time</h6>[WEEK 2] December 10 (Saturday)</div>
+          <div><h6>Type</h6>Indoor</div>
+          <div><h6>Event Description</h6>In conjunction with the World Arab Language Day held every Dec 18, UNISSA will be organising an Arab Language festival in collaboration with Saudi Arabia Embassy. Participants from neighbouring Asean countries will be involved in the festival.</div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 3-->
+  <div class="modal fade" id="mevent3">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body modalGrid">
+          <div><img class="rounded" src="Images/Events/event3.jpg" style="width:95%"></div>
+          <div><h6>Mindquest Online Premier Chess League 2021</h6></div>
+          <div><h6>Organizer</h6>Premier Chess League BN Management</div>
+          <div><h6>Time</h6>[WEEK 3-4] December 14 (Wednesday) - December 20 (Tuesday)</div>
+          <div><h6>Type</h6>Outdoor</div>
+          <div><h6>Event Description</h6>8 teams will be competing in a Chess League competition in a Double Round Robin online match. Sponsored by Mindquest Tuition School and supported by the Brunei Chess Federation and Premier Chess League BN Management, this competition will begin in October and end in December.</div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 4-->
+  <div class="modal fade" id="mevent4">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body modalGrid">
+          <div><img class="rounded" src="Images/Events/event4.jpg" style="width:95%"></div>
+          <div><h6>Brunei Unexpected Kingdom Ultra Marathon2021 (BUKUM)</h6></div>
+          <div><h6>Organizer</h6>Begawan Athlete</div>
+          <div><h6>Time</h6>[WEEK 1-5] December 1 (Thursday) - December 31 (Saturday)</div>
+          <div><h6>Type</h6>Outdoor</div>
+          <div><h6>Event Description</h6>This year’s ultra marathon is a true test endurances as you challenge yourself to a 75-km run. This marathon is held in conjunction with His Majesty Sultan and Yang Di-Pertuan of Brunei Darussalam’s 75th Birthday.</div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 5-->
+  <div class="modal fade" id="mevent5">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body modalGrid">
+          <div><img class="rounded" src="Images/Events/event5.jpg" style="width:95%"></div>
+          <div><h6>Sale Promo On Books Published By Museums Department</h6></div>
+          <div><h6>Organizer</h6>Jabatan Muzium-Muzium</div>
+          <div><h6>Time</h6>[Week 4] December 21 (Wednesday)</div>
+          <div><h6>Type</h6>Indoor</div>
+          <div><h6>Event Description</h6>Don’t miss out on special offers, discounts between 20% to 80% and bulk sales on books published by the Museums Department throughout the month of December 2021 (availability is subject to approval).</div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 6-->
+  <div class="modal fade" id="mevent6">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body modalGrid">
+          <div><img class="rounded" src="Images/Events/event6.jpg" style="width:95%"></div>
+          <div><h6>5th International Seminar On Halalan Thayyiban Products And Services</h6></div>
+          <div><h6>Organizer</h6>UNISSA</div>
+          <div><h6>Time</h6>[WEEK 2-4] December 7 (Wednesday) - 21 (Wednesday)</div>
+          <div><h6>Type</h6>Indoor</div>
+          <div><h6>Event Description</h6>This seminar aims to identify the needs and continuity of the Thayyiban halal industry while highlighting the strength and advantages of the industry.  The discussion is held in hopes to empower scholars and practitioners of this industry in order succeed in the development of the halal industry towards realising Wawasan Brunei 2035.</div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 7-->
+  <div class="modal fade" id="mevent7">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body modalGrid">
+          <div><img class="rounded" src="Images/Events/event7.jpg" style="width:95%"></div>
+          <div><h6>Coding Conquest Hackathon</h6></div>
+          <div><h6>Organizer</h6>Grominda Sdn Bhd</div>
+          <div><h6>Time</h6>December 6 (Monday) - 19 (Sunday)</div>
+          <div><h6>Type</h6>Indoor</div>
+          <div><h6>Event Description</h6>Techies will learn to fully exploit their programming talents after this virtual event that explores the progression from block-based coding to more comprehensive workshops and training, with participation from industries, private and government agencies.</div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 8-->
+  <div class="modal fade" id="mevent8">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body modalGrid">
+          <div><img class="rounded" src="Images/Events/event8.jpg" style="width:95%"></div>
+          <div><h6>E-Sports & Game On Competition</h6></div>
+          <div><h6>Organizer</h6>Jerudong Park Country Club</div>
+          <div><h6>Time</h6>[WEEK1] December 1 (Thursday) - 3 (Saturday)</div>
+          <div><h6>Type</h6>Indoor</div>
+          <div><h6>Event Description</h6>This will be the first ever eSport tournament held by JPCC in collaboration with Game On. This remote event is open to 13 years old and above with the aim to exploring ways to overcome the limitations of organising such events during COVID-19 restrictions</div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 9-->
+  <div class="modal fade" id="mevent9">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body modalGrid">
+          <div><img class="rounded" src="Images/Events/event9.jpg" style="width:95%"></div>
+          <div><h6>AMPRO Series</h6></div>
+          <div><h6>Organizer</h6>CRIT ESPORTS SDN BHD</div>
+          <div><h6>Time</h6>[WEEK 5] December 26 (Monday) - December 31 (Saturday)</div>
+          <div><h6>Type</h6>Indoor</div>
+          <div><h6>Event Description</h6>Amateur Professional (AMPRO) series is the first ever series created by Crit Esport to install a sense of professionalism in the Bruneian esport landscape. This will serve as a platform for the country to take its first leap into the professional world.Amateur Professional (AMPRO) series is the first ever series created by Crit Esport to install a sense of professionalism in the Bruneian esport landscape. This will serve as a platform for the country to take its first leap into the professional world.</div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 10-->
+  <div class="modal fade" id="mevent10">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body modalGrid">
+          <div><img class="rounded" src="Images/Events/event10.jpg" style="width:95%"></div>
+          <div><h6>Year End Exhibition 2021</h6></div>
+          <div><h6>Organizer</h6>Times Square Property Management Sdn Bhd</div>
+          <div><h6>Time</h6>[WEEK 4-5] December 22 (Thursday) - December 31 (Saturday)</div>
+          <div><h6>Type</h6>Indoor</div>
+          <div><h6>Event Description</h6>Times Square Shopping Centre will be having its Year End Exhibition 2021 in conjunction with the school holidays and the Brunei December Festival 2021.</div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 11-->
+  <div class="modal fade" id="mevent11">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body modalGrid">
+          <div><img class="rounded" src="Images/Events/event11.jpg" style="width:95%"></div>
+          <div><h6>Rimba Garden Central Mega Garden Sales</h6></div>
+          <div><h6>Organizer</h6>KN Nursery (B) Sdn Bhd</div>
+          <div><h6>Time</h6>[WEEK 1-5] December 1 (Thursday) - December 31 (Saturday)</div>
+          <div><h6>Type</h6>Outdoor</div>
+          <div><h6>Event Description</h6>If you need to add some nature vibes into your living or working space, you’ll find all of that you need but at better prices during the Rimba Garden Central’s Sale Promotional Event throughout December</div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 12-->
+  <div class="modal fade" id="mevent12">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body modalGrid">
+          <div><img class="rounded" src="Images/Events/event12.jpg" style="width:95%"></div>
+          <div><h6>"Rehatkan Minda" Activity 1</h6></div>
+          <div><h6>Organizer</h6>Jabatan Muzium-Muzium</div>
+          <div><h6>Time</h6>[WEEK 2] December 7 (Wednesday)</div>
+          <div><h6>Type</h6>Outdoor</div>
+          <div><h6>Event Description</h6>Tease your mind and take part in an online activity organised by the Museums Department. Do crosswords, puzzles and quizzes, find hidden words and answers to questions related to the museums.</div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<!-- -------- FOOTER --------- -->
+<!-- Remove the container if you want to extend the Footer to full width. -->
+  <!-- Footer -->
+  <footer class="text-center text-white" style="background-color: #3f51b5">
+    <!-- Grid container -->
+    <div class="container">
+      <!-- Section: Links -->
+      <section class="mt-5">
+        <!-- Grid row-->
+        <div class="row text-center d-flex justify-content-center pt-5">
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="Homepage.html" class="text-white">Home</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="Events.html" class="text-white">Events</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="Gallery.html" class="text-white">Gallery</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="PlacesToGo.html" class="text-white">Places to Go</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-5" />
+
+      <!-- Section: Text -->
+      <section class="mb-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <p id="bold">(+673)876 9923</p>
+            <br>
+
+            <p>
+               Block 2E Ong Sum Ping Condominium, Jalan Ong Sum Ping, Bandar Seri Begawan BA1311
+            </p> <br>
+
+            <!-- Feedback Form -->
+<a id="green" href="" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Leave us a feedback</a>
+
+<!-- Modal -->
+<!-- https://mdbootstrap.com/docs/standard/components/modal/ -->
+<!-- Form -->
+<!-- https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_form&stacked=h --> 
+<!-- https://www.w3schools.com/bootstrap4/bootstrap_forms.asp -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">FEEDBACK FORM</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/action_page.php" class="needs-validation" novalidate>
+    <div class="mb-3 mt-3">
+      <label for="uname" class="form-label">Fullname:</label>
+      <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="mb-3">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="comment">Feedback:</label>
+      <textarea class="form-control" rows="5" id="comment" name="text" required></textarea>
+    </div>
+    <div class="mb-3">
+    <label for="formFile" class="form-label">Attachment: (OPTIONAL)</label>
+    <input class="form-control" type="file" id="formFile" accept=".png, .jpg">
+    </div>
+    <p class="mb-3">On a scale of 1-5, How was your BDF 2022 Experience?</p>
+    <div class="mb-3">
+    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+  <label class="form-check-label" for="inlineRadio1">1</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+  <label class="form-check-label" for="inlineRadio2">2</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option3" />
+  <label class="form-check-label" for="inlineRadio2">3</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option4" />
+  <label class="form-check-label" for="inlineRadio2">4</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option5" />
+  <label class="form-check-label" for="inlineRadio2">5</label>
+</div>
+    </div>
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" id="myCheck"  name="remember" required>
+      <label class="form-check-label" for="myCheck">I give my consent for my feedback to be showcased</label>
+      <div class="valid-feedback">Proceed.</div>
+      <div class="invalid-feedback">Check this checkbox to continue.</div>
+    </div>
+  </div>
+      <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="reset" class="btn btn-primary">Clear Form</button>
+      </form></div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </section>
+      <!-- Section: Text -->
+
+      <!-- Section: Social -->
+      <section class="text-center mb-5">
+        <a href="https://www.facebook.com/RickAstley" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/rickastley?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://instagram.com/officialrickastley?igshid=YmMyMTA2M2Y=" class="text-white me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </section>
+      <!-- Section: Social -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2022 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/"
+         >BDF2022</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+<!-- End of .container -->
+
+ 
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+<!-- ----------------FITERBUCKS-- JQUERY FEATURE #4 -->
+<!-- Taken from https://www.npmjs.com/package/filterbucks-->
+  <script>
+
+    jQuery(document).ready(function(){
+      $(".filter1").filterbucks({
+        HideUnrelateds:true,
+        BtnSingleChoise:true,
+        ButtonCssOpacity:true
+      });
+      $(".filter1").on("filterbucks-start",function(){
+        console.log("Start!");
+      });
+      $(".filter1").on("filterbucks-end",function(){
+        console.log("End!");
+      });
+    });
+
+    </script>
+
+  
+
+
+</body>
+</html>
